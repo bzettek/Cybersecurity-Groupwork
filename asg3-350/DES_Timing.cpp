@@ -25,6 +25,9 @@ int main()
     int count = 1000; //how many times we encrypt
     timespec start, stop; //for before and after encryption
 
+    // block to hold decrypted data
+    DES_cblock decyphertext;
+
     for (int i = 0; i < count; i++) 
     {
         clock_gettime(CLOCK_REALTIME, &start); //b4 encryption
@@ -41,6 +44,25 @@ int main()
     }
 
     cout << "Average time used for DES encryption: " << (all/count) << " nanoseconds" << endl;
+
+    all = 0; //reset for decryption timing
+
+    for (int i = 0; i < count; i++) 
+    {
+        clock_gettime(CLOCK_REALTIME, &start); //b4 encryption
+
+        // run decryption
+        DES_ecb_encrypt(&cyphertext, &decyphertext, &key, DES_DECRYPT);
+
+        clock_gettime(CLOCK_REALTIME, &stop); //time right after encryption
+
+        //for nanosec conversion
+        long start_time = start.tv_sec * 1000000000 + start.tv_nsec; 
+        long stop_time = stop.tv_sec * 1000000000 + stop.tv_nsec;
+        all += stop_time - start_time; //running total
+    }
+
+    cout << "Average time used for DES decryption: " << (all/count) << " nanoseconds" << endl;
 
     return 0;
 }

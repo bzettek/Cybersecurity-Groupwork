@@ -1,4 +1,4 @@
-//Camilla_Timing.cpp
+//Camellia_Timing.cpp
 // Brandon Zettek, Yusuf Oner, Jacob Doose, Mohammad Khan
 #include <iostream>
 #include <ctime>
@@ -13,6 +13,8 @@ int main()
     CAMELLIA_KEY key;
     unsigned char keyBytes[] = { 0x01, 0x22, 0x44, 0x66, 0x88, 0xaa, 0xcc, 0xee,
                     0x01, 0x23, 0x45, 0x67, 0x89, 0xab, 0xcd, 0xef };	
+
+    Camellia_set_key(keyBytes, 128, &key); //matches DES
 
     // example input block: 16 bytes of data
     unsigned char *plaintext = (unsigned char *)"Group 2! Camilla";	
@@ -32,7 +34,6 @@ int main()
         clock_gettime(CLOCK_REALTIME, &start); //b4 encryption
 
         // run encryption
-        Camellia_set_key(keyBytes, 128, &key);
         Camellia_ecb_encrypt(plaintext, ciphertext, &key, CAMELLIA_ENCRYPT);
 
         clock_gettime(CLOCK_REALTIME, &stop); //time right after encryption
@@ -43,7 +44,9 @@ int main()
         all += stop_time - start_time; //running total
     }
 
-    cout << "Average time used for Camilla encryption: " << (all/count) << " nanoseconds" << endl;
+    cout << "Average time used for Camellia encryption: " << (all/count) << " nanoseconds" << endl;
+
+    all = 0; //reset for decryption timing
 
     for (int i = 0; i < count; i++) 
     {
@@ -65,7 +68,7 @@ int main()
         all += stop_time - start_time; //running total
     }
 
-    cout << "Average time used for Camilla decryption: " << (all/count) << " nanoseconds" << endl;
+    cout << "Average time used for Camellia decryption: " << (all/count) << " nanoseconds" << endl;
 
     return 0;
 }
