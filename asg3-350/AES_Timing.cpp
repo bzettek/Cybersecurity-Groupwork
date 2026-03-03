@@ -57,8 +57,6 @@ int main()
 
         // run decryption
         AES_ecb_encrypt(ciphertext, deciphertext, &key, AES_DECRYPT);
-        deciphertext[16] = '\0';
-
         clock_gettime(CLOCK_REALTIME, &stop); //time right after encryption
 
         //for nanosec conversion

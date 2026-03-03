@@ -27,7 +27,7 @@ int main()
     timespec start, stop; //for before and after encryption
 
     // buffer to hold decrypted data
-        unsigned char deciphertext[17];
+    unsigned char deciphertext[17];
 
     for (int i = 0; i < count; i++) 
     {
@@ -54,8 +54,6 @@ int main()
 
         // run descryption
         Camellia_ecb_encrypt(ciphertext, deciphertext, &key, CAMELLIA_DECRYPT);
-        // check for correctness
-        deciphertext[16] = '\0';
 
         //Test Output that decipher worked
         //cout << "Test out: " << deciphertext << endl;

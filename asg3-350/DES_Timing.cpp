@@ -18,7 +18,7 @@ int main()
     DES_cblock plaintext = {'g', 'r', 'o', 'u', 'p', '2', '!', '!'};
 
     // block to hold encrypted data
-    DES_cblock cyphertext;
+    DES_cblock ciphertext;
 
     // timing
     long all = 0;
@@ -26,14 +26,14 @@ int main()
     timespec start, stop; //for before and after encryption
 
     // block to hold decrypted data
-    DES_cblock decyphertext;
+    DES_cblock deciphertext;
 
     for (int i = 0; i < count; i++) 
     {
         clock_gettime(CLOCK_REALTIME, &start); //b4 encryption
 
         // run encryption
-        DES_ecb_encrypt(&plaintext, &cyphertext, &key, DES_ENCRYPT);
+        DES_ecb_encrypt(&plaintext, &ciphertext, &key, DES_ENCRYPT);
 
         clock_gettime(CLOCK_REALTIME, &stop); //time right after encryption
 
@@ -52,7 +52,7 @@ int main()
         clock_gettime(CLOCK_REALTIME, &start); //b4 encryption
 
         // run decryption
-        DES_ecb_encrypt(&cyphertext, &decyphertext, &key, DES_DECRYPT);
+        DES_ecb_encrypt(&ciphertext, &deciphertext, &key, DES_DECRYPT);
 
         clock_gettime(CLOCK_REALTIME, &stop); //time right after encryption
 
