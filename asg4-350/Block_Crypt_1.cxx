@@ -34,12 +34,21 @@ int encrypt(unsigned char *plaintext, int plaintext_len, unsigned char *key, uns
   if(!(ctx = EVP_CIPHER_CTX_new())) handleErrors();
 
   //initialise  encryption op
-  if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_128_cbc(), NULL, key, iv)) handleErrors();
+  if(1 != EVP_EncryptInit_ex(ctx, EVP_aes_128_cbc(), NULL, key, iv)) 
+  {
+    handleErrors();
+  }
 
-  if(1 != EVP_EncryptUpdate(ctx, ciphertext, &len, plaintext, plaintext_len)) handleErrors();
+  if(1 != EVP_EncryptUpdate(ctx, ciphertext, &len, plaintext, plaintext_len)) 
+  {
+    handleErrors();
+  }
   ciphertext_len = len;
 
-  if(1 != EVP_EncryptFinal_ex(ctx, ciphertext + len, &len)) handleErrors();
+  if(1 != EVP_EncryptFinal_ex(ctx, ciphertext + len, &len))
+  {
+    handleErrors();
+  }
   ciphertext_len += len;
 
   //clean up
@@ -118,7 +127,9 @@ int main(int argc, char *argv[])
   string outfile = inputfile;
   size_t dot = outfile.rfind('.');
   if (dot != string::npos)
-    outfile = outfile.substr(0, dot);
+  {
+    outfile = outfile.substr(0, dot); 
+  }
   outfile += ".enc";
 
   //write ciphertext to output file

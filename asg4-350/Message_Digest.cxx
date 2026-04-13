@@ -7,8 +7,10 @@
 using namespace std;
 using namespace std::chrono;
 
-int main(int argc, char* argv[]) {
-   if (argc != 2) {
+int main(int argc, char* argv[]) 
+{
+   if (argc != 2) 
+   {
       cerr << "Usage: ./Message_Digest <inputfile>" << endl;
       return 1;
    }
