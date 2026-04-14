@@ -5,13 +5,14 @@
 //connect via NIU VPN
 //Scans UDP and TCP ports on blitz.cs.niu.edu
 //find open UDP port send query get secret key
-//find open TCP port, send query get encrypted mesage
-//decrypt the message with RC4 using the secret key
+//find open TCP port then send query get encrypted mesage
+//decrypt message with RC4 using the secret key
 
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <unistd.h>
 #include <cstring>
+#include <ctime>
 #include <iostream>
 using namespace std;
 
@@ -74,7 +75,14 @@ int main()
 	unsigned char message[1024];
 	int msglen = 0;
 
+	//times and ports to report at the end
+	time_t start_time = time(0);
+	time_t udp_time = 0;
+	time_t tcp_time = 0;
+	int udp_port = 0;
+	int tcp_port = 0;
 
+	cout << "Start time: " << ctime(&start_time);
 	cout << "1. UDP port scan" << endl;
 
 	//create the UDP socket
@@ -143,6 +151,8 @@ int main()
 
 		//success we have secret key
 		keylen = rc;
+		udp_time = time(0);
+		udp_port = ntohs(target.sin_port);
 
 		cout << "\n Target port " << ntohs(target.sin_port) << " sent: " << rc << " bytes" << endl;
 		cout << " Secret key (hex): ";
@@ -215,6 +225,7 @@ int main()
 
 		//receive the message back from the server
 		rc = read(tcp_sock, message, sizeof(message));
+
 		if (rc < 0) 
         {
 			perror("read");
@@ -232,6 +243,8 @@ int main()
 
 		//success we have encrypted message
 		msglen = rc;
+		tcp_time = time(0);
+		tcp_port = port;
 		cout << " Received encrypted message: " << rc << " bytes" << endl;
 		cout << " Ciphertext (hex): ";
 		for (int i = 0; i < msglen; i++)
@@ -248,7 +261,7 @@ int main()
 		return 1;
 	}
 
-	 //3. Decrypt the message using RC4
+	 //3. Decrypt the mesage using RC4
 
 	cout << "\n3. RC4 Decryption" << endl;
 
@@ -256,8 +269,14 @@ int main()
 	rc4_crypt(key, keylen, message, msglen, decrypted);
 	decrypted[msglen] = '\0';
 
-
-	cout << " Decrypted message: " << (char *)decrypted << endl;
+	//print summary of times and ports response
+	cout << "\nSummary" << endl;
+	cout << "Connect start time: " << ctime(&start_time);
+	cout << "UDP response time:  " << ctime(&udp_time);
+	cout << "TCP response time:  " << ctime(&tcp_time);
+	cout << "UDP port: " << udp_port << endl;
+	cout << "TCP port: " << tcp_port << endl;
+	cout << "\nDecrypted message: " << (char *)decrypted << endl;
 
 	return 0;
 }
