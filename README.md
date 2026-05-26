@@ -1,6 +1,4 @@
-# CSCI 350 – Applied Cryptography & Network Security Labs
-
-Group 2 — Brandon Zettek, Yusuf Oner, Jacob Doose, Mohammad Khan
+# Applied Cryptography & Network Security Labs
 
 Three assignments covering cipher benchmarking, file encryption, and live port scanning against a class server. All written in C/C++ using OpenSSL.
 
