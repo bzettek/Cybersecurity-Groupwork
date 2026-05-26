@@ -1,0 +1,104 @@
+This is what will be submitted check it over please.
+
+Yusuf Oner (z2048138), Mohammad Khan (z2044617)
+Brandon Zettek (z2015083), Jacob Doose (z2017072)
+4/12/2026
+
+Assignment 5
+
+Start time: Tue Apr 14 11:01:10 2026
+1. UDP port scan
+.......................................................................
+ Target port 9071 sent: 16 bytes
+ Secret key (hex): ef25685a2793fa13df1390bbf7cf88f3
+
+2. TCP port scan
+.............................................................................
+ Target port 9077 accepted connection
+ Received encrypted message: 406 bytes
+ Ciphertext (hex): 611bfeaa043f359813cdd121f5d05f4455223dbe71e4139f920b4470a652987b91025374fbb91ce941a9766d3ad85b1fc706fefa402ca354c4bcd070764af49a3e8dc45ac045957e6f7e40820b2715cf48f2dc51eb3c53107c0bb55951aada6ed005f3584332f1a759244bc8534488049f1d42ff9bb8180620d7f8a2d60e11ca56ec11c23f1068913ac85a0776410c82e147e71b8b5b00d40d60461b1db44892dec24f295336f65305c79954343b94d3dfab6f9688aa2738dea7a4c81802509d9d6a908d43f59dfe524fbfadf9f5fb34df5998a32c9e6205e9339b76acfe3c8948ac805f27e95fa13ce4e986397e27edbfc52fd27fe152a3afd955d54cbfc86baf6bae1ef69f1194adb960d4cb5df972dc3faa9cce2dac317c60f20b6b85db7f93bbe9346f7d46f7675945ecc3d7948126096bf6045134d1e0f4f08197339e578240160724e1d00d26ca491da7b4c7ce81e69e9cd681566813ee56f87c81669e65da6dc6f30cdb6e1e27992dd2366a22719bf3fbd22014685ea2dcb498de54bb51dcf9127d924e9265087a6d8c508115d35a5bcf512c
+
+3. RC4 Decryption
+
+Summary
+Connect start time: Tue Apr 14 11:01:10 2026
+UDP response time:  Tue Apr 14 11:01:24 2026
+TCP response time:  Tue Apr 14 11:01:28 2026
+UDP port: 9071
+TCP port: 9077
+
+Decrypted message: There is no character, howsoever good and fine, but it can be destroyed by
+ridicule, howsoever poor and witless.  Observe the ass, for instance: his
+character is about perfect, he is the choicest spirit among all the humbler
+animals, yet see what ridicule has brought him to.  Instead of feeling
+complimented when we are called an ass, we are left in doubt.
+        -- Mark Twain, "Pudd'nhead Wilson's Calendar"
+
+
+Start time: Tue Apr 14 11:00:10 2026
+1. UDP port scan
+....
+ Target port 9004 sent: 16 bytes
+ Secret key (hex): 38b5eabcff5672dbc3c3dbec940f34d1
+
+2. TCP port scan
+...............................................................
+ Target port 9063 accepted connection
+ Received encrypted message: 432 bytes
+ Ciphertext (hex): 2f116639ed198fff13a43964fbaf8fe43d204037f4f41a6367fd487983b9b16e58c35275ad617e55cd27b93ec059ab25b798332cd52659f66395876597f6ebf07372d85105f24fd641ea311337e7906b849240afc2c703d029319fe9fe7d2dc7cdb8f5acf74956e256f735e77cc07b4c3766174a1c210ce56afb5b6edb59e5cc149b02648f4059c8501ef13fcda40870fe72632bcbc7ac8d2deb8febcbc5561d744a20b1f0c33dec6da75f92911f77679b12aec4b127273761383b6210a510d7f5c18c5c6cd5599434d56b2447a8ce9112d9a392e193ebc17fc816e8e94c780a7cde25f62aa1c7a8fbd6259351268ce366073d8a278365c6cb51008ebf4849a76effd604749ec1d37ce5a135f482881bd51bd3b42f2347dc99e4abd8abd982b18df621e13a47ad9d86a34af64175cfb42a6b2e7944d94dcdfce7181819e6ee1410286d2cb1228df494de0a8989fd7daf872da30384ef439607b26f86cdf362c896b0acf21a854ef4f88644c49e4d3ff5b4e037d505c030e74484d1f67e51d36662568e5c9b89c4d59998f913e447c1f4c0dbe3850468fc34e16d3c89da04cda9f37ea1ae3c2501a8f7ed6dc3c1cd8bc8
+
+3. RC4 Decryption
+
+Summary
+Connect start time: Tue Apr 14 11:00:10 2026
+UDP response time:  Tue Apr 14 11:00:11 2026
+TCP response time:  Tue Apr 14 11:00:15 2026
+UDP port: 9004
+TCP port: 9063
+
+Decrypted message: Q:    How many hardware engineers does it take to change a light bulb?
+A:    None.  We'll fix it in software.
+
+Q:    How many system programmers does it take to change a light bulb?
+A:    None.  The application can work around it.
+
+Q:    How many software engineers does it take to change a light bulb?
+A:    None.  We'll document it in the manual.
+
+Q:    How many tech writers does it take to change a light bulb?
+A:    None.  The user can figure it out.
+
+
+Start time: Tue Apr 14 11:03:57 2026
+1. UDP port scan
+...........
+ Target port 9011 sent: 16 bytes
+ Secret key (hex): b4cc5390bf701850672024ba0d249f70
+
+2. TCP port scan
+...............................................................................................
+ Target port 9095 accepted connection
+ Received encrypted message: 409 bytes
+ Ciphertext (hex): f02869bb53b963f9197d011dbd37733be60e4f7dc17617a8e345e480365162b94f8faefb666bfbab6ada039e27400ea0fc44ef187eabbcf1114550abb85f5313043a5f3ba2fa00f816b08d702448440cb7e616bda0579ac80bfe062450ba0a1b5b150d760bff60fe1b6df72320bde89a1b4d4070741d1063c4c344fbb86db0bc82f40ee5622bb8fcb891c6bbe520a493dabd1d916705e7f7fe1a144eec1528c127fcb8380795d6e03cf1139501fc5818ca53f613f2e0238afbe75714746852fa22e54e8fdd6a250a215c1a78fddb4dbe6c0daf67e8af8df335ecbe141dce66aaf4a84d5a241cea8dc0b268c1f79fa9f0595cc13a9644b8c6705d09661990471efbd68d154d130abc5d7225f74f6613a64c1406327b3c605fc55226a7bcae9ba26bc343b6036f4ec2893c5886df1b64758a9fd6d306b8ed96442231c5ec066cc22aeea4992e379f0209317c2582e2405ac2ef15d538565b17773f58132dd211130640fb5d4b3d249b2bfb5cc29f2fac0c394f78d21d6e89cb880760264e67becda824193813b280765e5bc677c42d06722b827667e71fb710c9
+
+3. RC4 Decryption
+
+Summary
+Connect start time: Tue Apr 14 11:03:57 2026
+UDP response time:  Tue Apr 14 11:03:59 2026
+TCP response time:  Tue Apr 14 11:04:04 2026
+UDP port: 9011
+TCP port: 9095
+
+Decrypted message: Sheriff Chameleotoptor sighed with an air of weary sadness, and then
+turned to Doppelgutt and said 'The Senator must really have been on a
+bender this time -- he left a party in Cleveland, Ohio, at 11:30 last
+night, and they found his car this morning in the smokestack of a British
+aircraft carrier in the Formosa Straits.'
+        -- Grand Panjandrum's Special Award, 1985 Bulwer-Lytton
+           bad fiction contest.
+
+
+
+
+
